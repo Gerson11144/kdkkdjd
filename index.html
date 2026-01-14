@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meu site</title>
+    <title>Meu site com caixa de texto</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,27 +13,45 @@
         h1 {
             color: #333333;
         }
-        p {
-            font-size: 18px;
-            color: #555555;
-        }
-        a {
-            display: inline-block;
+        textarea {
+            width: 300px;
+            height: 100px;
             margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 15px;
             padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
             background-color: #007bff;
             color: white;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
         }
-        a:hover {
+        button:hover {
             background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555555;
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao meu site</h1>
-    <p>Site criado diretamente pelo GitHub Pages.</p>
-    <a href="teste-1.html">Clique aqui para ver a página de teste</a>
+    <h1>Escreva algo!</h1>
+    <textarea id="caixaTexto" placeholder="Digite aqui..."></textarea><br>
+    <button onclick="mostrarTexto()">Enviar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarTexto() {
+            var texto = document.getElementById("caixaTexto").value;
+            document.getElementById("resultado").innerText = "Você escreveu: " + texto;
+        }
+    </script>
 </body>
 </html>
+
